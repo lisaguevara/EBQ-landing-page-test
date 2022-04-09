@@ -1,6 +1,7 @@
 /* Reset Browser Default Styles */
-a, a:visited, section, h1, h2, p{
+a, a:visited, section, h1, h2, p, aside, body{
     text-decoration: none;
+    font-size: 15px;
     color: #000000;
     padding: 0;
     margin: 0;
@@ -31,6 +32,8 @@ section#hero, nav {
 
 section#hero, section#benefits, section#cta {
     text-align: center;
+    display: flex;
+    flex-flow: column wrap;
 }
 
 section#cta {
@@ -68,6 +71,19 @@ section#benefits img {
     width: 100%;
 }
 
+section#benefits > div {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+section#benefits div:first-child div:nth-child(2){
+    order: 0;
+}
+
+section#benefits div:first-child div:nth-child(1){
+    order: 1;
+}
+
 /****** CTA *******/
 section#cta h1 {
     color: #FFFFFF;
@@ -85,22 +101,60 @@ section#cta div.button a {
     height: 32px;
 }
 
-/* Tablet Views Only*/
-@media only screen and (min-width: 768px) and (max-width:1024px) {
+/* Tablet & Desktop Views */
+@media only screen and (min-width: 768px) {
     /****** General *******/
 
     /****** Nav *******/
 
     /****** Hero *******/
+    section#hero h1, section#hero p {
+        align-self: flex-start;
+        width: 50%;
+        text-align: left;
+    }
 
     /****** Benefits *******/
+    section#benefits > div {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
 
+    section#benefits div > div {
+        flex-basis: 50%;
+    }
+
+    section#benefits h2, section#benefits p {
+        text-align: left;
+    }
+
+    section#benefits img {
+        width: 100%;
+    }
+
+    section#benefits div:first-child div:nth-child(2){
+        order: 1;
+    }
+
+    section#benefits div:first-child div:nth-child(1){
+        order: 0;
+    }
+
+    section#benefits div:nth-child(2) div:nth-child(2){
+        order: 0;
+    }
+
+    section#benefits div:nth-child(2) div:nth-child(1){
+        order: 1;
+    }
     /****** CTA *******/
 
 }
 
-/* Desktop Views */
-@media only screen and (min-width: 1025px) {
+/* Desktop Views Only*/
+@media only screen and (min-width: 1024px) {
     /****** General *******/
 
     /****** Nav *******/
