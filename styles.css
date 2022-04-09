@@ -46,7 +46,9 @@ div.button {
     text-align: center;
     width: 40%;
     height: 6vh;
-    font: normal normal bold 1rem/1.2rem "Open Sans";
+    font-weight: bold;
+    font-size: .63em;
+    line-height: 99%;
 }
 
 section#hero, nav {
@@ -66,6 +68,7 @@ nav {
     box-sizing: border-box;
     width: 100%;
     padding: 7% 5.6% 10%;
+    font-size:1.5rem;
 }
 
 nav div {
@@ -82,7 +85,7 @@ nav img {
 nav div.button {
     background: #2979EC 0% 0% no-repeat padding-box;
     float: right;
-    margin: 30px 0;
+    margin: 9% 0;
 }
 
 nav div.button a {
@@ -123,7 +126,7 @@ section#benefits div:first-child div:nth-child(1){
 }
 
 section#benefits div:nth-child(2) div:first-child > p{
-    margin: 7% 6% 0%;
+    margin: 7% 5% 0%;
 }
 
 section#benefits div:nth-child(2) div:nth-child(2) {
@@ -138,6 +141,7 @@ section#cta h1 {
     color: #FFFFFF;
     font-size: 1.75em;
     line-height: 107%;
+    padding-bottom: 5%;
 }
 
 section#cta div.button {
@@ -147,7 +151,7 @@ section#cta div.button {
 }
 
 section#cta div.button a {
-    color: #2979EC;
+    color: #0A459E;
     width: 100%;
     height: 32px;
     padding: 7px 0;
@@ -156,22 +160,46 @@ section#cta div.button a {
 /* Tablet & Desktop Views */
 @media only screen and (min-width: 768px) {
     /****** General *******/
+    h1 {
+        margin: 0 5% 1%;
+    }
 
+    h2 {
+        font-size: 1.6em;
+    }
+
+    p {
+        margin-left: 5%;
+    }
     /****** Nav *******/
+    nav {
+        padding: 0% 3.6% 5%;
+    }
 
+    nav img {
+        width: 20%;
+    }
     /****** Hero *******/
+    section#hero {
+        padding: 1% 0 1%;
+    }
     section#hero h1, section#hero p {
         align-self: flex-start;
-        width: 50%;
         text-align: left;
     }
 
     /****** Benefits *******/
+    section#benefits {
+        padding-top: 10%;
+        padding-bottom: 10%;
+
+    }
     section#benefits > div {
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
+        margin: 0 2.7%;
     }
 
     section#benefits div > div {
@@ -188,20 +216,24 @@ section#cta div.button a {
 
     section#benefits div:first-child div:nth-child(2){
         order: 1;
+        padding: 0;
     }
 
-    section#benefits div:first-child div:nth-child(1){
+    section#benefits div:first-child div:first-child{
         order: 0;
+        flex-grow: 1;
+        flex-shrink: 0;
     }
 
     section#benefits div:nth-child(2) div:nth-child(2){
         order: 0;
     }
 
-    section#benefits div:nth-child(2) div:nth-child(1){
+    section#benefits div:nth-child(2) div:first-child{
         order: 1;
     }
     /****** CTA *******/
+
 
 }
 
