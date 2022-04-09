@@ -1,2 +1,113 @@
-/******* LANDING PAGE STYLES *******/
+/* Reset Browser Default Styles */
+a, a:visited, section, h1, h2, p{
+    text-decoration: none;
+    color: #000000;
+    padding: 0;
+    margin: 0;
+}
+/* End Reset */
 
+/* Mobile-first views */
+/****** General *******/
+body {
+    background-color: #FFFFFF;
+}
+
+nav {
+    width: 100%;
+}
+
+div.button, div.button a {
+    display: block;
+    border-radius: 50px;
+    text-align: center;
+    width: 164px;
+    height: 44px;
+}
+
+section#hero, nav {
+    background-color: #EBF4FF;
+}
+
+section#hero, section#benefits, section#cta {
+    text-align: center;
+}
+
+section#cta {
+    background-color: #0A459E;
+}
+
+/****** Nav *******/
+nav div {
+    display: inline;
+    width: 50%;
+    clear: both;
+}
+
+nav img {
+    width: 106px;
+    height: auto;
+}
+
+nav div.button {
+    background: #2979EC 0% 0% no-repeat padding-box;
+    float: right;
+    margin: 30px 0;
+}
+
+nav div.button a {
+    color: #FFFFFF;
+    width: 100%;
+}
+
+/****** Hero *******/
+
+
+/****** Benefits *******/
+section#benefits img {
+    width: 100%;
+}
+
+/****** CTA *******/
+section#cta h1 {
+    color: #FFFFFF;
+}
+
+section#cta div.button {
+    background-color: #FFBE3C;
+    height: 32px;
+    margin: 0 auto;
+}
+
+section#cta div.button a {
+    color: #2979EC;
+    width: 100%;
+    height: 32px;
+}
+
+/* Tablet Views Only*/
+@media only screen and (min-width: 768px) and (max-width:1024px) {
+    /****** General *******/
+
+    /****** Nav *******/
+
+    /****** Hero *******/
+
+    /****** Benefits *******/
+
+    /****** CTA *******/
+
+}
+
+/* Desktop Views */
+@media only screen and (min-width: 1025px) {
+    /****** General *******/
+
+    /****** Nav *******/
+
+    /****** Hero *******/
+
+    /****** Benefits *******/
+
+    /****** CTA *******/
+}
