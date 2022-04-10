@@ -14,12 +14,13 @@ html {
 }
 
 body {
-    background-color: #FFFFFF;
+    background-color: #EBF4FF;
     font-family: "Open Sans";
 }
 
 h1 {
     font-size: 2.2em;
+    max-font-size: 50px;
     font-weight: normal;
     line-height: 104%;
     margin: 5%;
@@ -27,6 +28,7 @@ h1 {
 
 h2 {
     font-size: 1.7em;
+    max-font-size: 40px;
     font-weight: normal;
     line-height: 111%;
     margin: 3% 5%;
@@ -34,6 +36,7 @@ h2 {
 
 p {
     font-size: .85em;
+    max-font-size: 20px;
     line-height: 122%;
     margin: 2% 6% 7%;
     font-weight: lighter;
@@ -51,10 +54,6 @@ div.button {
     line-height: 99%;
 }
 
-section#hero, nav {
-    background-color: #EBF4FF;
-}
-
 section#hero, section#benefits, section#cta {
     box-sizing: border-box;
     text-align: center;
@@ -62,24 +61,36 @@ section#hero, section#benefits, section#cta {
     flex-flow: column wrap;
     font-size: 1.5rem;
 }
-
 /****** Nav *******/
 nav {
     box-sizing: border-box;
     width: 100%;
     padding: 7% 5.6% 10%;
     font-size:1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
-nav div {
+nav div:first-child {
     box-sizing: border-box;
     display: inline;
     width: 50%;
-    clear: both;
+    align-self: center;
+    flex-basis: 100%;
+}
+nav div:nth-child(2){
+    box-sizing: border-box;
+    display: inline;
+    width: 50%;
+    align-self: center;
+    flex-basis: 100%;
 }
 
 nav img {
-    width: 30%;
+    width: 58%;
+    max-width: 106px;
 }
 
 nav div.button {
@@ -92,18 +103,17 @@ nav div.button a {
     color: #FFFFFF;
     width: 100%;
 }
-
 /****** Hero *******/
 section#hero {
     box-sizing: border-box;
     clear: both;
     padding: 7% 0 25%;
 }
-
 /****** Benefits *******/
 section#benefits {
     box-sizing: border-box;
     padding: 17% 0 25%;
+    background-color: #FFFFFF;
 }
 
 section#benefits img {
@@ -135,7 +145,7 @@ section#benefits div:nth-child(2) div:nth-child(2) {
 /****** CTA *******/
 section#cta {
     background-color: #0A459E;
-    padding: 17% 0 25%;
+    padding: 15% 0 20%;
 }
 section#cta h1 {
     color: #FFFFFF;
@@ -173,11 +183,11 @@ section#cta div.button a {
     }
     /****** Nav *******/
     nav {
-        padding: 0% 3.6% 5%;
+        padding: 0% 3.6% 10%;
     }
 
     nav img {
-        width: 20%;
+        width: 45%;
     }
     /****** Hero *******/
     section#hero {
@@ -187,11 +197,10 @@ section#cta div.button a {
         align-self: flex-start;
         text-align: left;
     }
-
     /****** Benefits *******/
     section#benefits {
-        padding-top: 10%;
-        padding-bottom: 10%;
+        padding-top: 9%;
+        padding-bottom: 9%;
 
     }
     section#benefits > div {
@@ -233,19 +242,36 @@ section#cta div.button a {
         order: 1;
     }
     /****** CTA *******/
-
-
 }
 
 /* Desktop Views Only*/
 @media only screen and (min-width: 1024px) {
     /****** General *******/
-
     /****** Nav *******/
-
+    nav {
+        padding-bottom: 1%;
+    }
+    nav img {
+        width: 25%;
+    }
     /****** Hero *******/
-
+    section#hero h1, section#hero p {
+        width: 50%;
+    }
     /****** Benefits *******/
+    section#benefits img:first-child {
+        max-width: 578px;
+    }
 
+    section#benefits img:nth-child(2) {
+        max-width: 630px;
+    }
     /****** CTA *******/
+    section#cta {
+        padding-top: 8%;
+        padding-bottom: 8%;
+    }
+    section#cta h1 {
+        line-height: 167%;
+    }
 }
