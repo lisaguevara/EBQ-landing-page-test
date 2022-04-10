@@ -18,6 +18,10 @@ body {
     font-family: "Open Sans";
 }
 
+a {
+    text-decoration: underline;
+}
+
 h1 {
     font-size: 2.2em;
     max-font-size: 50px;
@@ -42,16 +46,26 @@ p {
     font-weight: lighter;
 }
 
-div.button {
-    display: block;
+div.button a {
+    background-color: #2979EC;
     box-sizing: border-box;
     border-radius: 50px;
     text-align: center;
-    width: 40%;
-    height: 6vh;
+    width: 150px;
+    display: block;
     font-weight: bold;
     font-size: .63em;
-    line-height: 99%;
+    line-height: 132%;
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 7% 0%;
+    transition: all 400ms ease-out;
+}
+
+div.button a:hover {
+    background-color: #FFBE3C;
+    color: #2979EC;
+    transition: all 400ms ease-out;
 }
 
 section#hero, section#benefits, section#cta {
@@ -73,17 +87,8 @@ nav {
     align-items: flex-start;
 }
 
-nav div:first-child {
+nav > div:first-child, nav > div:nth-child(2) {
     box-sizing: border-box;
-    display: inline;
-    width: 50%;
-    align-self: center;
-    flex-basis: 100%;
-}
-nav div:nth-child(2){
-    box-sizing: border-box;
-    display: inline;
-    width: 50%;
     align-self: center;
     flex-basis: 100%;
 }
@@ -94,14 +99,7 @@ nav img {
 }
 
 nav div.button {
-    background: #2979EC 0% 0% no-repeat padding-box;
     float: right;
-    margin: 9% 0;
-}
-
-nav div.button a {
-    color: #FFFFFF;
-    width: 100%;
 }
 /****** Hero *******/
 section#hero {
@@ -155,16 +153,21 @@ section#cta h1 {
 }
 
 section#cta div.button {
-    background-color: #FFBE3C;
-    height: 32px;
     margin: 0 auto;
 }
 
 section#cta div.button a {
+    background-color: #FFBE3C;
     color: #0A459E;
-    width: 100%;
-    height: 32px;
-    padding: 7px 0;
+    transition: all 400ms ease-out;
+}
+
+section#cta div.button a:hover {
+    /*transition: border 300ms, background-color 300ms, color 300ms;*/
+    transition: all 400ms ease-out;
+    border: 2px solid #FFBE3C;
+    background-color: #0A459E;
+    color: #FFBE3C;
 }
 
 /* Tablet & Desktop Views */
@@ -201,7 +204,6 @@ section#cta div.button a {
     section#benefits {
         padding-top: 9%;
         padding-bottom: 9%;
-
     }
     section#benefits > div {
         display: flex;
@@ -241,12 +243,10 @@ section#cta div.button a {
     section#benefits div:nth-child(2) div:first-child{
         order: 1;
     }
-    /****** CTA *******/
 }
 
 /* Desktop Views Only*/
 @media only screen and (min-width: 1024px) {
-    /****** General *******/
     /****** Nav *******/
     nav {
         padding-bottom: 1%;
