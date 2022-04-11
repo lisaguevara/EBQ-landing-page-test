@@ -49,7 +49,78 @@
 		</section>
 
 		<script type="text/javascript">
-			// Event listener JS goes here
+			// Issues
+			// Function to add a transition to css
+			function addTransition(element) {
+				element.style.transition = "color 1s ease-in";
+			}
+			// Function to change text color to black
+			function blackText(element) {
+				element.style.color = "#000000";
+			}
+			// Function to change text color to white
+			function whiteText(element) {
+				element.style.color = "#FFFFFF";
+			}
+			// Function adds transition and black text to hero
+			function setHeroTextVisible() {
+				// Create variables for hero h1 and p elements
+				let heroH1 = document.getElementById("hero").firstElementChild;
+				let heroP = document.getElementById("hero").lastElementChild;
+				addTransition(heroH1);
+				blackText(heroH1);
+				addTransition(heroP);
+				blackText(heroP);
+			}
+			// Function add transition and black text to benefits
+			function setBenefitsTextVisible() {
+				// Create variables for benefits h2 and p elements
+				let benefitsH2 = document.querySelectorAll("#benefits h2");
+				let benefitsP = document.querySelectorAll("#benefits p");
+				for (let i = 0; i < benefitsH2.length; i++) {
+					addTransition(benefitsH2[i]);
+					blackText(benefitsH2[i]);
+				}
+				for (let i = 0; i < benefitsP.length; i++) {
+					addTransition(benefitsP[i]);
+					blackText(benefitsP[i]);
+				}
+			}
+			// Function add transition and white text to cta
+			function setCtaTextVisible() {
+				// Create variables for cta h1 elements
+				let ctaH1 = document.querySelector("#cta h1");
+				addTransition(ctaH1);
+				whiteText(ctaH1);
+			}
+			// Create variable for benefits and cta section
+			let benefit = document.getElementById("benefits");
+			let cta = document.getElementById("cta");
+
+			// Hero event listener
+			window.addEventListener("load", setHeroTextVisible);
+			/* Creating successful mouseover event listeners for mobile devices is
+			*  beyond my scope of knowledge. From the research I've done, it's
+			*  extremely difficult and awkward to get mouse events to work properly.
+			*
+			*  Due to time constraints, I'm settling with event listeners that fire
+			*  on load for mobile devices, based on viewport size. Desktop viewports
+			*  will use event listeners that fire on mouseover events.
+			*  - Lisa Guevara
+			*/
+			if (window.innerWidth < 1024) {
+				// Mobile device views
+				// Benefit section
+				window.addEventListener("load", setBenefitsTextVisible);
+				// CTA section
+				window.addEventListener("load", setCtaTextVisible);
+			} else {
+				// Desktop views
+				// Benefit event listener
+				benefit.addEventListener("mouseover", setBenefitsTextVisible);
+				// CTA event listener
+				cta.addEventListener("mouseover", setCtaTextVisible);
+			}
 		</script>
 	</body>
 </html>
