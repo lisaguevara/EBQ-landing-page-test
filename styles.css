@@ -107,11 +107,17 @@ section#hero {
     clear: both;
     padding: 7% 0 25%;
 }
+section#hero h1, section#hero p {
+    color:#EBF4FF;
+}
 /****** Benefits *******/
 section#benefits {
     box-sizing: border-box;
     padding: 17% 0 25%;
     background-color: #FFFFFF;
+}
+section#benefits h2, section#benefits p {
+    color:#FFFFFF;
 }
 
 section#benefits img {
@@ -146,7 +152,7 @@ section#cta {
     padding: 15% 0 20%;
 }
 section#cta h1 {
-    color: #FFFFFF;
+    color: #0A459E;
     font-size: 1.75em;
     line-height: 107%;
     padding-bottom: 5%;
